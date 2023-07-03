@@ -13,7 +13,7 @@ An **S-expression** is recursively defined as either
 
 Atoms in Lisp will be explained in the subsection [Atoms](#Atoms) below.
 
-In Lisp, all programs and data can be represented by S-expressions.
+In Lisp, all source codes and data can be represented by S-expressions.
 For example, the arithmatic expression `1 + 2` can be represented by
 the S-expression
 ```
@@ -37,6 +37,33 @@ a node in the tree:
      / \
     1   2
 ```
+
+An S-expresion `(x y)` is an ordered pair `(x, y)` in nature.
+In Lisp, there exists a special S-expresion `(x y)` with `x` and `y` being
+nothing.  Such an S-expresion is denoted by `()`, and officially denoted by
+`NIL`.
+
+An S-expression `(x y)` can be called a **list** with two objects/members.
+In this sense an S-expression can be extended to be a list with more than 2
+objects/members.  For example, a list `(x y z)` with three objects/members `x`,
+`y` and `z` is defined to be
+```
+  (x (y (z NIL)))
+```
+**But this is not always true in Common Lisp.**  For example, the S-expression
+```
+  (+ 1 (* 2 3))
+```
+should be
+```
+  (+ (1 ((* 2 3) NIL)))
+```
+namely,
+```
+  (+ (1 ((* (2 (3 NIL))) NIL)))
+```
+according to the above definition.  However, in some Common Lisp completion,
+it is not the case, in fact.
 
 In Common Lisp, an S-expression can be referred to by
 a [**datum label**](datum-label.md).

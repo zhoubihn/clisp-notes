@@ -38,6 +38,11 @@ a node in the tree:
     1   2
 ```
 
+In Common Lisp, an S-expression can be referred to by
+a [**datum label**](datum-label.md).
+By virtue of datum labels, an S-expression could have a structure of
+cyclic graph, not simply a binary tree.
+
 An S-expresion `(x y)` is an ordered pair `(x, y)` in nature.
 In Lisp, there exists a special S-expresion `(x y)` with `x` and `y` being
 nothing.  Such an S-expresion is denoted by `()`, and officially denoted by
@@ -64,11 +69,6 @@ namely,
 ```
 according to the above definition.  However, in some Common Lisp completion,
 it is not the case, in fact.
-
-In Common Lisp, an S-expression can be referred to by
-a [**datum label**](datum-label.md).
-By virtue of datum labels, an S-expression could have a structure of
-cyclic graph, not simply a binary tree.
 
 ### Atoms
 

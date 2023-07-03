@@ -11,7 +11,7 @@ An **S-expression** is recursively defined as either
 * an expression of the form `(x y)`  where `x` and `y` are S-expressions
   separated by a whitespace.
 
-Both programs and data can be represented by S-expressions.
+In Lisp, all programs and data can be represented by S-expressions.
 For example, the arithmatic expression `1 + 2` can be represented by
 the S-expression
 ```
@@ -35,3 +35,8 @@ a node in the tree:
      / \
     1   2
 ```
+
+In Common Lisp, an S-expression can be referred to by
+a [**datum label**](datum-label.md).
+By virtue of datum labels, an S-expression could have a structure of
+cyclic graph, not simply a binary tree.

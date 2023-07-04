@@ -74,8 +74,15 @@ and
   (+ (1 ((* (2 (3 NIL))) NIL)))
 ```
 cannot be evaluated.
-Therefore, we should think that a list with multiple members cannot be
-identeified with a nested list with two members.
+
+Therefore, we should think that, in Common Lisp, a list with multiple members
+is a sequence of its members.
+Lists in Common Lisp should be defined as follows.
+Assume that `n` is a positive integer, then
+* there exists a unique list with no members, which is denoted by `()` or `NIL`;
+* a list with `n` members is a sequence `(x1 x2 ... xn)`, with `x1`, `x2`, ...,
+  `xn` some atoms or lists in Common Lisp.
+
 
 
 ### Atoms

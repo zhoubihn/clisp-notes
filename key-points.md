@@ -83,6 +83,18 @@ Assume that `n` is a positive integer, then
 * a list with `n` members is a sequence `(x1 x2 ... xn)`, with `x1`, `x2`, ...,
   `xn` some atoms or lists in Common Lisp.
 
+If a list in Common Lisp has members more than one, these members are separated
+by whitespace of paratheses.  For example, the following expressions are
+identical in Common Lisp:
+```
+  (x1 x2 (y1 y2) x3)
+  (x1
+      x2
+      (y1 y2)
+      x3)
+  (x1 x2(y1 y2)x3)
+```
+For the reason of readability, the form `(x1 x2(y1 y2)x3)` is not recommended.
 
 
 ### Atoms

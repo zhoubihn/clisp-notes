@@ -2,10 +2,10 @@
 
 ## Syntax and Semantics of Common Lisp
 
-### S-expressions
+### S-expressions and Lists
 
-The term S-expression was invented for the programming language Lisp.
-It has become an important concept in computer science.
+The term S-expression was invented for the programming language Lisp,
+widely accepted as an important concept in computer science.
 An **S-expression** is recursively defined as either
 * an atom, or
 * an expression of the form `(x y)`  where `x` and `y` are S-expressions
@@ -20,7 +20,7 @@ the S-expression
   (+ (1 2))
 ```
 while a more complicated expression such as `(1 + 2) * 3` can be represented by
-the S-expresion
+the S-expression
 ```
   (* ((+ (1 2)) 3))
 ```
@@ -43,32 +43,40 @@ a [**datum label**](datum-label.md).
 By virtue of datum labels, an S-expression could have a structure of
 cyclic graph, not simply a binary tree.
 
-An S-expresion `(x y)` is an ordered pair `(x, y)` in nature.
-In Lisp, there exists a special S-expresion `(x y)` with `x` and `y` being
-nothing.  Such an S-expresion is denoted by `()`, and officially denoted by
+An S-expression `(x y)` is an ordered pair `(x, y)` in nature.
+In Lisp, there exists a special S-expression `(x y)` with `x` and `y` being
+nothing.  Such an S-expression is denoted by `()`, and officially denoted by
 `NIL`.
 
-An S-expression `(x y)` can be called a **list** with two objects/members.
-In this sense an S-expression can be extended to be a list with more than 2
-objects/members.  For example, a list `(x y z)` with three objects/members `x`,
-`y` and `z` is defined to be
+An S-expression `(x y)` can be called a **list** with two members.
+In some literature, a list with more than 2 members is defined in terms of
+S-expressions (ordered pairs).  For example, a list `(x y z)` with three members
+`x`, `y` and `z` is defined to be a nested S-expressions (ordered pair) as
 ```
   (x (y (z NIL)))
 ```
-**But this is not always true in Common Lisp.**  For example, the S-expression
+and so on.  It seems that a list is also called an S-expression with more than
+two memebers, hence the terms ``list'' and ``S-expression'' can be used
+interchangeably.
+
+**However, in some Common Lisp completion, a list with more than two members
+are not identified with a nested ordered pairs as shown in the above.**
+For example, in [GNU CLISP](http://clisp.org) 2.49.93+, the list
 ```
   (+ 1 (* 2 3))
 ```
-should be
+is valuated to be `7`, but the nested lists (ordered pairs)
 ```
   (+ (1 ((* 2 3) NIL)))
 ```
-namely,
+and
 ```
   (+ (1 ((* (2 (3 NIL))) NIL)))
 ```
-according to the above definition.  However, in some Common Lisp completion,
-it is not the case, in fact.
+cannot be evaluated.
+Therefore, we should think that a list with multiple members cannot be
+identeified with a nested list with two members.
+
 
 ### Atoms
 

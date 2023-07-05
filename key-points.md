@@ -59,13 +59,13 @@ and so on.  It seems that a list is also called an S-expression with more than
 two memebers, hence the terms ``list'' and ``S-expression'' can be used
 interchangeably.
 
-**However, in some Common Lisp completion, a list with more than two members
+**However, in some Common Lisp implementation, a list with more than two members
 are not identified with a nested ordered pairs as shown in the above.**
 For example, in [GNU CLISP](http://clisp.org) 2.49.93+, the list
 ```
   (+ 1 (* 2 3))
 ```
-is valuated to be `7`, but the nested lists (ordered pairs)
+is evaluated to be `7`, but the nested lists (ordered pairs)
 ```
   (+ (1 ((* 2 3) NIL)))
 ```
@@ -76,13 +76,26 @@ and
 cannot be evaluated.
 
 Therefore, we should think that, in Common Lisp, a list with multiple members
-is a sequence of its members.
-Lists in Common Lisp should be defined as follows.
+is just a sequence of its members, not identical to some nested ordered pairs
+if it contains more than two members.
+Accordingly, lists in Common Lisp should be defined as follows.
 Assume that `n` is a positive integer, then
 * there exists a unique list with no members, which is denoted by `()` or `NIL`;
 * a list with `n` members is a sequence `(x1 x2 ... xn)`, with `x1`, `x2`, ...,
   `xn` some atoms or lists in Common Lisp.
 
+If a list in Common Lisp has members more than one, these members are separated
+by whitespace of paratheses.  For example, the following expressions are
+identical in Common Lisp:
+```
+  (x1 x2 (y1 y2) x3)
+  (x1
+      x2
+      (y1 y2)
+      x3)
+  (x1 x2(y1 y2)x3)
+```
+For the reason of readability, the form `(x1 x2(y1 y2)x3)` is not recommended.
 
 
 ### Atoms

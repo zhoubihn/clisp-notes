@@ -59,9 +59,9 @@ and so on.  It seems that a list is also called an S-expression with more than
 two memebers, hence the terms ``list'' and ``S-expression'' can be used
 interchangeably.
 
-**However, in some Common Lisp implementation, a list with more than two members
-are not identified with a nested ordered pairs as shown in the above.**
-For example, in [GNU CLISP](http://clisp.org) 2.49.93+, the list
+**However, in some Common Lisp implementations, a list with more than two
+members are not identified with a nested ordered pairs as shown in the above.**
+For example, in [GNU CLISP](http://clisp.org)-2.49.93+, the list
 ```
   (+ 1 (* 2 3))
 ```
@@ -86,16 +86,24 @@ Assume that `n` is a positive integer, then
 
 If a list in Common Lisp has members more than one, these members are separated
 by whitespace of paratheses.  For example, the following expressions are
-identical in Common Lisp:
+identical in Common Lisp: (1) the list
 ```
   (x1 x2 (y1 y2) x3)
+```
+in one line;  and (2) the list
+```
   (x1
       x2
       (y1 y2)
       x3)
+```
+in four lines with indents;  and (3) the list
+```
   (x1 x2(y1 y2)x3)
 ```
-For the reason of readability, the form `(x1 x2(y1 y2)x3)` is not recommended.
+with some whitespaces omitted.
+For the reason of readability, the last form `(x1 x2(y1 y2)x3)` is not
+recommended.
 
 
 ### Atoms

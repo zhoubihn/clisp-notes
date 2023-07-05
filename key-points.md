@@ -85,7 +85,7 @@ Assume that `n` is a positive integer, then
   `xn` some atoms or lists in Common Lisp.
 
 If a list in Common Lisp has members more than one, these members are separated
-by whitespace of paratheses.  For example, the following expressions are
+by whitespace of parentheses.  For example, the following expressions are
 identical in Common Lisp: (1) the list
 ```
   (x1 x2 (y1 y2) x3)
@@ -107,6 +107,14 @@ recommended.
 
 
 ### Atoms
+
+In Common Lisp, atoms are separated by whitespace and/or parentheses.
+Note that atoms in a pair of parentheses are members of a list.  For example,
+`(f(x y z)g)` is the same as `(f (x y z) g)`, being the list with members
+`f`, `(x y z)` and `g`, among which `(x y z)` is a list with members `x`, `y`
+and `z`.
+This rule is the same as how members in a list are separated.
+See, subsection [S-expressions and Lists](#S-expressions-and-Lists).
 
 An *atom* in Lisp is an expression (a form) that is not built of
 other independent Lisp expressions (forms).

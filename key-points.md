@@ -119,20 +119,7 @@ Therefore, we should list atoms in Lisp one by one.
 
     A **literal decimal number** is an expression consisting of digits `0` to
     `9` only, sometimes leaded by a single character `+` or `-`.  For examples,
-
-```
-  -11
-  -10
-  - 9
-  ...
-  - 1
-    0
-    1
-    2
-  ...
-```
-
-    are all literal decimal integers.
+    `-11`, `-10`, `- 9`, ..., `- 1`, `0`, `1`, `2`, ... are all literal decimal integers.
 
     A negative literal decimal integer must be preceded by the sign `-`.
     A positive literal decimal integer can be preceded by the sign `+`,

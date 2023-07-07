@@ -11,9 +11,9 @@ An **S-expression** is recursively defined as either
 * an expression of the form `(x y)`  where `x` and `y` are S-expressions
   separated by a whitespace.
 
-Atoms in Lisp will be explained in the subsection [Atoms](#Atoms) below.
+Atoms in Common Lisp will be explained in the subsection [Atoms](#Atoms) below.
 
-In Lisp, all source codes and data can be represented by S-expressions.
+In Common Lisp, all source codes and data can be represented by S-expressions.
 For example, the arithmatic expression `1 + 2` can be represented by
 the S-expression
 ```
@@ -44,9 +44,9 @@ By virtue of datum labels, an S-expression could have a structure of
 cyclic graph, not simply a binary tree.
 
 An S-expression `(x y)` is an ordered pair `(x, y)` in nature.
-In Lisp, there exists a special S-expression `(x y)` with `x` and `y` being
-nothing.  Such an S-expression is denoted by `()`, and officially denoted by
-`NIL`.
+In Common Lisp, there exists a special S-expression `(x y)` with `x` and `y`
+being nothing.  Such an S-expression is denoted by `()`, and officially denoted
+by `NIL`.
 
 An S-expression `(x y)` can be called a **list** with two members.
 In some literature, a list with more than 2 members is defined in terms of
@@ -108,14 +108,14 @@ recommended.
 
 ### Atoms
 
-An *atom* in Lisp is an expression (a form) that is not built of
-other independent Lisp expressions (forms).
+An *atom* in Common Lisp is an expression (a form) that is not built of
+other independent Common Lisp expressions (forms).
 The precise meaning of this statement is unclear, in fact.
-Therefore, we should list atoms in Lisp one by one.
+Therefore, we should list atoms in Common Lisp one by one.
 
-1. In Lisp, `NIL` is an atom.  It is evaluated as `NIL`.
+1. In Common Lisp, `NIL` is an atom.  It is evaluated as `NIL`.
 
-2.  In Lisp, an literal integer is an atom, evaluated to itself.
+2.  In Common Lisp, an literal integer is an atom, evaluated to itself.
 
     A **literal decimal number** is an expression consisting of digits `0` to
     `9` only, sometimes leaded by a single character `+` or `-`.  For examples,
@@ -131,8 +131,8 @@ Therefore, we should list atoms in Lisp one by one.
     Hence, for example, `00000000256` and `-000000256` are evaluated to `256`
     and `-256`, respectively.
 
-    In Lisp, `+0` and `-0` are also integers, and they are both evaluated to
-    `0`.
+    In Common Lisp, `+0` and `-0` are also integers, and they are both evaluated
+    to `0`.
 
     In List, a literal hexadecimal number is written in the form of `#x...`,
     where `...` is an expression consisting of hexadecimal digits `0` to `F`.
@@ -156,13 +156,15 @@ Therefore, we should list atoms in Lisp one by one.
     **The prefix `#b` can be written as `#B`, and similarly, `#o` as `#O`, and
     `#x` as `#X`.**
 
+    In Common Lisp,
+
     According to the [Common Lisp HyperSpec (CLHS)](http://www.lispworks.com/documentation/lw50/CLHS/Front/Contents.htm),
     there is no limit on the magnitude of an integer in Common Lisp.
 
-3. In Lisp, each fraction is an atom.
+3. In Common Lisp, each fraction is an atom.
 
-    A fraction in Lisp can be written in the form of `m/n`, where `m` and `n`
-    are some integers, and `n` is a positive integer.
+    A fraction in Common Lisp can be written in the form of `m/n`, where `m`
+    and `n` are some integers, and `n` is a positive integer.
 
     Usually, both `m` and `n` are literal decimal integers, and `m/n`
     is evaluated to the irreducible fraction `a/b` equal to `m/n`.
@@ -170,7 +172,7 @@ Therefore, we should list atoms in Lisp one by one.
     For examples, `5/10` is evaluated to `1/2` and `-5/10` is evalutated to
     `-1/2`.
 
-    For a fraction in Lisp, both its numerator and denominator can be
+    For a fraction in Common Lisp, both its numerator and denominator can be
     simultaneously binary integers, or simultaneously octal integers,
     or simultaneously hexadecimal integers.
     In these cases, the radix (base) sign is written as the prefix of
@@ -179,11 +181,11 @@ Therefore, we should list atoms in Lisp one by one.
     For another example, `#b-10/10000`, `#o-1/10` and `#x-2/10`
     are all valid fractions, all evaluated to `-1/8`.
 
-4. In Lisp, each float number is an atom.
+4. In Common Lisp, each float number is an atom.
 
-5. In Lisp, each string is an atom.
+5. In Common Lisp, each string is an atom.
 
-6. In Lisp, each symbol is an atom.
+6. In Common Lisp, each symbol is an atom.
 
 In Common Lisp, atoms are separated by whitespace and/or parentheses.
 Note that atoms in a pair of parentheses are members of a list.  For example,
@@ -205,7 +207,7 @@ Hence `- 5`, `#x- 5`, `#x -5`, `#x - 5`, `- 1/2`, `-1 / 2`, `-1 /2`, `- 1/ 2`,
 It is similarly the case for the positive sign `+`.
 
 
-The following objects are atoms in Lisp:
+The following objects are atoms in Common Lisp:
 * a number, including
     * integers such as -2, -1, 0, 1, 2, and so on;
     * fractions such as

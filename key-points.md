@@ -159,6 +159,32 @@ Therefore, we should list atoms in Lisp one by one.
     According to the [Common Lisp HyperSpec (CLHS)](http://www.lispworks.com/documentation/lw50/CLHS/Front/Contents.htm),
     there is no limit on the magnitude of an integer in Common Lisp.
 
+3. In Lisp, each fraction is an atom.
+
+    A fraction in Lisp can be written in the form of `m/n`, where `m` and `n`
+    are some integers, and `n` is a positive integer.
+
+    Usually, both `m` and `n` are literal decimal integers, and `m/n`
+    is evaluated to the irreducible fraction `a/b` equal to `m/n`.
+    That is, `a` and `b > 0` are coprime integers satisfying `m * b = n * a`.
+    For examples, `5/10` is evaluated to `1/2` and `-5/10` is evalutated to
+    `-1/2`.
+
+    For a fraction in Lisp, both its numerator and denominator can be
+    simultaneously binary integers, or simultaneously octal integers,
+    or simultaneously hexadecimal integers.
+    In these cases, the radix (base) sign is written as the prefix of
+    the fraction.  For example, `#b10/10000`, `#o1/10` and `#x2/10` are
+    all valid fractions, all evaluated to `1/8`.
+    For another example, `#b-10/10000`, `#o-1/10` and `#x-2/10`
+    are all valid fractions, all evaluated to `-1/8`.
+
+4. In Lisp, each float number is an atom.
+
+5. In Lisp, each string is an atom.
+
+6. In Lisp, each symbol is an atom.
+
 In Common Lisp, atoms are separated by whitespace and/or parentheses.
 Note that atoms in a pair of parentheses are members of a list.  For example,
 `(f(x y z)g)` is the same as `(f (x y z) g)`, being the list with members
@@ -167,6 +193,16 @@ and `z`.
 This rule is the same as how members in a list are separated.
 See, subsection [S-expressions and Lists](#S-expressions-and-Lists).
 
+**Since whitespaces make sense in Common Lisp, there should be no whitespaces
+before or after the positive sign, the positive/negative sign,
+the radix signes `#b`, `#o`, `#x` and `#nr` (with `n` an integer from 2 to 36),
+and the slash in a fraction.**
+For example, for negative numbers `-5`, `#x-5`, `-1/2`, `-1.2`, and so on,
+there should not be whitespaces before or after the negative sign `-`,
+and no whitespaces after `#x`, either.
+Hence `- 5`, `#x- 5`, `#x -5`, `#x - 5`, `- 1/2`, `-1 / 2`, `-1 /2`, `- 1/ 2`,
+`- 1.2`, and so on, are all invalid expressions to be numbers.
+It is similarly the case for the positive sign `+`.
 
 
 The following objects are atoms in Lisp:

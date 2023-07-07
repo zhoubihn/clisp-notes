@@ -108,6 +108,67 @@ recommended.
 
 ### Atoms
 
+An *atom* in Lisp is an expression (a form) that is not built of
+other independent Lisp expressions (forms).
+The precise meaning of this statement is unclear, in fact.
+Therefore, we should list atoms in Lisp one by one.
+
+1. In Lisp, `NIL` is an atom.  It is evaluated as `NIL`.
+
+2.  In Lisp, an literal integer is an atom, evaluated to itself.
+
+  A **literal decimal number** is an expression consisting of digits `0` to
+  `9` only, sometimes leaded by a single character `+` or `-`.  For examples,
+```
+  -11
+  -10
+  - 9
+  ...
+  - 1
+    0
+    1
+    2
+  ...
+```
+  are all literal decimal integers.
+
+  A negative literal decimal integer must be preceded by the sign `-`.
+  A positive literal decimal integer can be preceded by the sign `+`, but it is
+  not necessary.  For example, `+256`, `+00256` and `256` are both evaluated to
+  `256`.
+
+  In a literal decimal integer, leading zeros are allowed and omitted
+  during evaluation.
+  Hence, for example, `00000000256` and `-000000256` are evaluated to `256` and
+  `-256`, respectively.
+
+  In Lisp, `+0` and `-0` are also integers, and they are both evaluated to `0`.
+
+  In List, a literal hexadecimal number is written in the form of `#x...`,
+  where `...` is an expression consisting of hexadecimal digits `0` to `F`.
+  **Hexadecimal digits `A` to `F` are case insensitive.**
+  A positive hexadecimal integer could have a positive sign `+` immediately
+  after `#x`, but it is not necessary.
+  A negative hexadecimal integer must have its negative sign `-` immediately
+  after `#x`.
+  For examples, `#x+10AF`, `#x10AF`, `#x10aF`, `#x0010AF`, and so on, are all
+  evaluated to `4271`, and `#x-10AF` is evaluated to `-4271`.
+  Similarly to literal decimal integers, `#x+0`, `#x+000`, `#x-0`, `#x-000`,
+  `#x0`, `#x00000`, and so on, are all evaluated to `0`.
+
+  Similarly, literal binary integers are written in the form of `#b...`,
+  with `...` consisting of binary digits `0` and `1`, which might be preceded by
+  a sigle `+` or `-`;
+  literal octal integers are written in the form of `#o...`,
+  with `...` consisting of digits `0` to `7`, which might be preceded by
+  a sigle `+` or `-`.
+
+  **The prefix `#b` can be written as `#B`, and similarly, `#o` as `#O`, and
+  `#x` as `#X`.**
+
+  According to the [Common Lisp HyperSpec (CLHS)](http://www.lispworks.com/documentation/lw50/CLHS/Front/Contents.htm),
+  there is no limit on the magnitude of an integer in Common Lisp.
+
 In Common Lisp, atoms are separated by whitespace and/or parentheses.
 Note that atoms in a pair of parentheses are members of a list.  For example,
 `(f(x y z)g)` is the same as `(f (x y z) g)`, being the list with members
@@ -116,8 +177,7 @@ and `z`.
 This rule is the same as how members in a list are separated.
 See, subsection [S-expressions and Lists](#S-expressions-and-Lists).
 
-An *atom* in Lisp is an expression (a form) that is not built of
-other independent Lisp expressions (forms).
+
 
 The following objects are atoms in Lisp:
 * a number, including

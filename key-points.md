@@ -185,7 +185,43 @@ Therefore, we should list atoms in Common Lisp one by one.
     For another example, `#b-10/10000`, `#o-1/10` and `#x-2/10`
     are all valid fractions, all evaluated to `-1/8`.
 
-4. In Common Lisp, each float number is an atom.
+4. In Common Lisp, each floating-point number is an atom.
+
+    **Floating-point numbers in Common Lisp can be expressed in radix 10 only.**
+    There is no floating-point numbers in radix other than 10
+    built in Common Lisp.
+
+    The basic format of a **floating-point number** in Common Lisp is:
+    an optional sign, followed by a nonempty sequence of decimal digits
+    with an embedded decimal point.
+    The decimal point can be at any position in the sequence of digits.
+    For example, floating-point numbers `1.` and `1.0000` are both evaluated to
+    `1`, while `.1`, `.10`, `0.10` and `0.1` are all evaluated to `0.1`.
+
+    Floating-point numbers in Common Lisp can be written in the following form:
+    an integer or a floating-point number in the basic format
+    immediate followed by an exponent marker.
+    An **exponent marker** consists of a single letter among `e`, `s`, `f`, `d`
+    and `l`, immediately followed by a signed integer `n` say, which consists of
+    an optional sign and a nonempty sequence of digits from `0` to `9`.
+    The integer `n` is interpreted as the exponential to the power of 10.
+    For example, `2e0`, `2e+0` and `2.e-0` are all evaluated to `2.0`, and
+    `123e-5` is evaluated to `0.00123`.
+
+    For the exponent marker,
+    * the letter `s` indicates that the floating-point number is
+        a short floating-point number, and
+    * the letter `f` indicates that the floating-point number is
+        a single floating-point number, and
+    * the letter `d` indicates that the floating-point number is
+        a double floating-point number, and
+    * the letter `l` indicates that the floating-point number is
+        a long floating-point number, and
+    * the letter `e` is the default floating-point number:
+        single floating-point number.
+
+    Letters `e`, `s`, `f`, `d` and `l` are case insensitive.
+    Therefore, `12.3f6` and `12.3F6` are the same.
 
 5. In Common Lisp, each string is an atom.
 
@@ -215,7 +251,7 @@ The following objects are atoms in Common Lisp:
 * a number, including
     * integers such as -2, -1, 0, 1, 2, and so on;
     * fractions such as
-    * float numbers such as 1.0, 
+    * floating-point numbers such as 1.0, 
 * a string,
 * a symbol.
 

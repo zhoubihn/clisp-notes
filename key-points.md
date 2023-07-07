@@ -156,7 +156,11 @@ Therefore, we should list atoms in Common Lisp one by one.
     **The prefix `#b` can be written as `#B`, and similarly, `#o` as `#O`, and
     `#x` as `#X`.**
 
-    In Common Lisp,
+    In Common Lisp, the radix (base) of a number can be any integer `n` from `2`
+    to `36`.  An integer in radix `n` is written in the form of `#nr...` or
+    `#nR...`, with `...` some digits from `0` to `9`, together with necessary
+    digits from `A` to `Z` (or `a` to `z`).  For example, `#36r-1ZY` is a valid
+    integer in radix 36, which is evaluated to `-2590`.
 
     According to the [Common Lisp HyperSpec (CLHS)](http://www.lispworks.com/documentation/lw50/CLHS/Front/Contents.htm),
     there is no limit on the magnitude of an integer in Common Lisp.

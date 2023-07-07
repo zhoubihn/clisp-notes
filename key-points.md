@@ -223,6 +223,22 @@ Therefore, we should list atoms in Common Lisp one by one.
     Letters `e`, `s`, `f`, `d` and `l` are case insensitive.
     Therefore, `12.3f6` and `12.3F6` are the same.
 
+5. In Common Lisp, each complex number is an atom.
+
+    In Common Lisp, a complex number is written as `#c` (or `#C`) followed by
+    a list of two numbers.
+    Each of these two numbers can be an integer, a fraction
+    or a floating-point number.
+    * If the member in the list is an integer or a fraction, it can be
+        written in any radix from `2` to `36`.
+    * There can be whitespaces between `#c` (or `#C`) and the list of
+        two numbers.
+
+    For example, `#c(0 1)` is the imaginary unit, whose equare equals `-1`.
+    For another example, #c(1 0)` is evaluated to `1`.
+    Finally, there are the examples `#c(#b10 2.0e-9)` and
+    `#c(1/2 5)`.
+
 5. In Common Lisp, each string is an atom.
 
 6. In Common Lisp, each symbol is an atom.

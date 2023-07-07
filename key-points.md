@@ -264,23 +264,24 @@ Therefore, we should list atoms in Common Lisp one by one.
     Hence the quote mark is a special character in Common Lisp.
     If there exists a character in the string being the quote mark,
     it must be written as `\"`.
-    It follows that the back slash (`\`) is also a special character
+    It follows that the backslash (`\`) is also a special character
     (called the **escape character**).
     When this escape character appears in a string, it must be written as
     `\\` in the Common Lisp code.
 
     Here are some examples:
 
-    | Literal form    | What represented |
-    | --------------- | ---------------- |
-    | `"foo bar"`     | foo bar          |
-    | `"foo\\bar"`    | foo\bar          |
-    | `"\"foo\" bar"` | "foo" bar        |
+    | Literal form    | What represented | Remarks |
+    | --------------- | ---------------- | ------- |
+    | `"foo bar"` | foo bar | Whitespaces in strings: not delimiters for atoms |
+    | `"foo (bar)"`   | foo (bar) | Parentheses in strings: not delimiters for atoms |
+    | `"foo\\bar"`    | foo\bar          | How the backslash is represented |
+    | `"\"foo\" bar"` | "foo" bar        | How the quote mark is represented |
 
 8. In Common Lisp, each symbol is an atom.
 
 In Common Lisp, atoms are separated by whitespace and/or parentheses,
-but whitespaces and paratheses in strings are exception.
+but whitespaces and parentheses in strings are exception.
 Note that atoms in a pair of parentheses are members of a list.  For example,
 `(f(x y z)g)` is the same as `(f (x y z) g)`, being the list with members
 `f`, `(x y z)` and `g`, among which `(x y z)` is a list with members `x`, `y`

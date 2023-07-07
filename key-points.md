@@ -239,9 +239,25 @@ Therefore, we should list atoms in Common Lisp one by one.
     Finally, there are the examples `#c(#b10 2.0e-9)` and
     `#c(1/2 5)`.
 
-5. In Common Lisp, each string is an atom.
+6. In Common Lisp, characters are atoms.
 
-6. In Common Lisp, each symbol is an atom.
+    Here character means a single code in certain a character encoding system
+    (ASCII, UTF-9 or UTF-16, for example).
+    Different encoding systems assign different numbers to certain a character.
+    Thus characters are distinct from integers.
+    The Common Lisp standard did not mandate a particular encoding system.
+    This leaves a freedom for Common Lisp implementations.
+
+    The read syntax for a character is `#\` immediately followed by
+    the character to be read.  For example, `#\a` for letter `a` and
+    `#\魚` for a Chinese character (meaning fish).
+    Note that both `#\ ` and `#\Space` result in the space character.
+
+7. In Common Lisp, each string is an atom.
+
+    The format of strings in Common Lisp
+
+8. In Common Lisp, each symbol is an atom.
 
 In Common Lisp, atoms are separated by whitespace and/or parentheses.
 Note that atoms in a pair of parentheses are members of a list.  For example,

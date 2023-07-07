@@ -278,6 +278,13 @@ Therefore, we should list atoms in Common Lisp one by one.
     | `"foo\\bar"`    | foo\bar          | How the backslash is represented |
     | `"\"foo\" bar"` | "foo" bar        | How the quote mark is represented |
 
+    In Common Lisp, whitespaces and parentheses are delimiters for atoms.
+    But this is not applied to whitespaces and parentheses in a string.
+    In other words, whitespaces and parentheses in strings are treated as
+    ordinary characters, no longer delimiters.  Hence, the code `"foo bar"`
+    is a single atom, not two atoms as `"foo` and `bar"`.
+    Similarly, `"foo (bar)"` is also a single atom.
+
 8. In Common Lisp, each symbol is an atom.
 
 In Common Lisp, atoms are separated by whitespace and/or parentheses,

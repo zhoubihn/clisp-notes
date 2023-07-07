@@ -271,13 +271,11 @@ Therefore, we should list atoms in Common Lisp one by one.
 
     Here are some examples:
 
-    | ------------- | ----------------- |
-    | :Literal form | :What represented |
-    | :------------ | :---------------- |
-    | `"foo bar"`   | foo bar           |
-    | `"foo\\bar"`  | foo\bar           |
-    | `"\"foo\" bar"` | "foo" bar       |
-    | ------------- | ----------------- |
+    | Literal form    | What represented |
+    | --------------- | ---------------- |
+    | `"foo bar"`     | foo bar          |
+    | `"foo\\bar"`    | foo\bar          |
+    | `"\"foo\" bar"` | "foo" bar        |
 
 8. In Common Lisp, each symbol is an atom.
 

@@ -253,6 +253,8 @@ Therefore, we should list atoms in Common Lisp one by one.
     `#\魚` for a Chinese character (meaning fish).
     Note that both `#\ ` and `#\Space` result in the space character.
 
+    In Common Lisp, a character is evaluated to itself.
+
 7. In Common Lisp, each string is an atom.
 
     A string in Common Lisp is a sequence of characters, such as
@@ -284,6 +286,8 @@ Therefore, we should list atoms in Common Lisp one by one.
     ordinary characters, no longer delimiters.  Hence, the code `"foo bar"`
     is a single atom, not two atoms as `"foo` and `bar"`.
     Similarly, `"foo (bar)"` is also a single atom.
+
+    In Common Lisp, a string is evaluated to itself.
 
 8. In Common Lisp, each symbol is an atom.
 

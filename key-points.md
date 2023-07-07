@@ -255,11 +255,34 @@ Therefore, we should list atoms in Common Lisp one by one.
 
 7. In Common Lisp, each string is an atom.
 
-    The format of strings in Common Lisp
+    A string in Common Lisp is a sequence of characters, such as
+    `"Hello, world!"` and "四方上下曰宇，古往今來曰宙。".
+    The format of strings in Common Lisp is putting the desired sequence of
+    characters in a pair of double quote mark (`"`).
+    In other words, a double quote mark is the beginning of a string,
+    which ends at the next quote mark.
+    Hence the quote mark is a special character in Common Lisp.
+    If there exists a character in the string being the quote mark,
+    it must be written as `\"`.
+    It follows that the back slash (`\`) is also a special character
+    (called the **escape character**).
+    When this escape character appears in a string, it must be written as
+    `\\` in the Common Lisp code.
+
+    Here are some examples:
+
+    | ------------- | ----------------- |
+    | :Literal form | :What represented |
+    | :------------ | :---------------- |
+    | `"foo bar"`   | foo bar           |
+    | `"foo\\bar"`  | foo\bar           |
+    | `"\"foo\" bar"` | "foo" bar       |
+    | ------------- | ----------------- |
 
 8. In Common Lisp, each symbol is an atom.
 
-In Common Lisp, atoms are separated by whitespace and/or parentheses.
+In Common Lisp, atoms are separated by whitespace and/or parentheses,
+but whitespaces and paratheses in strings are exception.
 Note that atoms in a pair of parentheses are members of a list.  For example,
 `(f(x y z)g)` is the same as `(f (x y z) g)`, being the list with members
 `f`, `(x y z)` and `g`, among which `(x y z)` is a list with members `x`, `y`

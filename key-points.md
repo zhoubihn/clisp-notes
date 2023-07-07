@@ -256,7 +256,7 @@ Therefore, we should list atoms in Common Lisp one by one.
 7. In Common Lisp, each string is an atom.
 
     A string in Common Lisp is a sequence of characters, such as
-    `"Hello, world!"` and "四方上下曰宇，古往今來曰宙。".
+    `"Hello, world!"` and `"四方上下曰宇，古往今來曰宙。"`.
     The format of strings in Common Lisp is putting the desired sequence of
     characters in a pair of double quote mark (`"`).
     In other words, a double quote mark is the beginning of a string,

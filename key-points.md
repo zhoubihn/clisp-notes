@@ -291,6 +291,13 @@ Therefore, we should list atoms in Common Lisp one by one.
 
 8. In Common Lisp, each symbol is an atom.
 
+    Differently from other atoms, symbols in Common Lisp are usually evaluated
+    to some objects other than itself.
+    That is to say, **symbols in Common Lisp act the role of function names,
+    macros, type names, variables, and so on, in other programming languages.**
+
+    For details of symbols in Common Lisp, we refer to [symbols.md](symbols.md).
+
 In Common Lisp, atoms are separated by whitespace and/or parentheses,
 but whitespaces and parentheses in strings are exception.
 Note that atoms in a pair of parentheses are members of a list.  For example,
@@ -310,20 +317,3 @@ and no whitespaces after `#x`, either.
 Hence `- 5`, `#x- 5`, `#x -5`, `#x - 5`, `- 1/2`, `-1 / 2`, `-1 /2`, `- 1/ 2`,
 `- 1.2`, and so on, are all invalid expressions to be numbers.
 It is similarly the case for the positive sign `+`.
-
-
-The following objects are atoms in Common Lisp:
-* a number, including
-    * integers such as -2, -1, 0, 1, 2, and so on;
-    * fractions such as
-    * floating-point numbers such as 1.0, 
-* a string,
-* a symbol.
-
-Atoms are separated by whitespace or parentheses.
-
-
-### Lists
-
-
-### Forms

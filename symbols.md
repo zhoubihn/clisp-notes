@@ -39,8 +39,9 @@ symbol names.
     a symbol name.  Instead, `\"foo\"` is a valid symbold name.
 * Since the semicolon (`;`) starts comments in Lisp, this character should be
     written as `\;` whenever it is contained in a symbol name.
-* The following characters must be escaped in symbold names: `$`, the backquote,
-    the comma (`,`), the colon (`:`),
+* The following characters must be escaped in symbold names: `#`,
+    the backquote (backtick) (<code>\`</code>), the comma (`,`),
+    the colon (`:`).
 
 In the above, we have shown those special characters and how they are escaped
 in symbol names.  Alternatively, we can put the whole symbol name between a pair

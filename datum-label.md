@@ -1,1 +1,1 @@
-# Datum Labels in Common Lisp
+# Datum Labels

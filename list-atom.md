@@ -1,8 +1,6 @@
-# Key Points in Common Lisp
+# Lists and Atoms in Common Lisp
 
-## Syntax and Semantics of Common Lisp
-
-### S-expressions and Lists
+## S-expressions and Lists
 
 The term S-expression was invented for the programming language Lisp,
 widely accepted as an important concept in computer science.
@@ -106,7 +104,7 @@ For the reason of readability, the last form `(x1 x2(y1 y2)x3)` is not
 recommended.
 
 
-### Atoms
+## Atoms
 
 An *atom* in Common Lisp is an expression (a form) that is not built of
 other independent Common Lisp expressions (forms).

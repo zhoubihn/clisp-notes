@@ -1,4 +1,4 @@
-# Lists and Atoms in Common Lisp
+# Lists and Atoms
 
 ## S-expressions and Lists
 

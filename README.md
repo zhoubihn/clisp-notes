@@ -5,6 +5,6 @@ It is some notes to understand Common Lisp better.
 
 ## Contents
 
-* [Lists and Atom in Common Lisp](list-atom.md)
+* [Lists and Atoms](list-atom.md)
 * [Symbols](symbols.md)
 * [Datum Labels](datum-label.md)

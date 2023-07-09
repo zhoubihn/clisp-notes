@@ -40,8 +40,8 @@ symbol names.
 * Since the semicolon (`;`) starts comments in Lisp, this character should be
     written as `\;` whenever it is contained in a symbol name.
 * The following characters must be escaped in symbold names: `#`,
-    the backquote (backtick) (<code>\`</code>), the comma (`,`),
-    the colon (`:`).
+    the backquote (backtick) (<code>\`</code>), the single quote (`'`),
+    the comma (`,`) and the colon (`:`).
 
 In the above, we have shown those special characters and how they are escaped
 in symbol names.  Alternatively, we can put the whole symbol name between a pair
@@ -65,6 +65,32 @@ Their usage are as shown in the following examples:
 | 2 / (-10) | `(/ 2 -10)` | Evaluates `-1/5` |
 | (1 + 2)/4 | `(/ (+ 1 2) 4)` | Evaluates to `3/4` |
 
+However, the above characters `+`, `-`, `*` and `/` in a symbol name have
+nothing to do with arithmetic operations.  For example, `uid+pid` is a single
+symbol name, not the addition of two variables `uid` and `pid`.
+Similarly, `family-name` is a single symbol name, not the subtraction of
+variables `family` and `name`.
+
+In Lisp, there is a convention that every global variable has its symbol name
+beginning and ending with asterisk (`*`), like `*var-1*` and `*no-proof*`,
+as examples.
+
+The built-in global variable `*read-base*` is the current number base (radix),
+which defaults to `10`.
+If a symbol name is interpreted to be a number in the current number base,
+then it is not a valid symbol name, but a number.
+For example, when `*read-base*` is `16` or greater, `face` is not a symbol name
+but a number;  when `*read-base*` is less than `16`, `face` is a symbol name.
+
+Conventionally, the name of a constant is often written with a leading `+`
+and a trailing `+`.
+But built-in constants in Lisp do not follow this convention.  For example,
+```
+  pi
+  most-positive-fixnum
+  least-negative-short-float
+```
+
 A symbol is called **self-evaluating** if it has itself as its value.
 A symbol in the `KEYWORD` package is self-evaluating.
 A symbol beginning with the colon (the character `:`) is a keyword symbol.
@@ -73,4 +99,4 @@ Each keyword symbol is evaluated to itself.
 
 ## References
 
-[^1] David B. Lamkins, [*Successful Lisp*](http://dept-info.labri.fr/~strandh/Teaching/MTP/Common/David-Lamkins/cover.html).
+[^1]: David B. Lamkins, [*Successful Lisp*](http://dept-info.labri.fr/~strandh/Teaching/MTP/Common/David-Lamkins/cover.html).

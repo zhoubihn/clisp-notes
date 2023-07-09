@@ -94,7 +94,7 @@ But built-in constants in Lisp do not follow this convention.  For example,
 A symbol is called **self-evaluating** if it has itself as its value.
 A symbol in the `KEYWORD` package is self-evaluating.
 A symbol beginning with the colon (the character `:`) is a keyword symbol.
-Hence the character `:` is called the **package prefix**.
+Hence the character `:` is called the **package prefix**.[^1]
 Each keyword symbol is evaluated to itself.
 
 ## References
